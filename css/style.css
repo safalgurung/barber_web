@@ -136,13 +136,13 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 /* ─── NAVBAR ─────────────────────────────────────────────────────── */
 .navbar {
   position:fixed; top:0; left:0; right:0; z-index:1000;
-  padding:1.5rem 0; transition:all var(--ease);
+  padding:.75rem 0; transition:all var(--ease);
 }
 .navbar.scrolled {
   background:var(--nav-bg); backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
-  padding:1rem 0; box-shadow:var(--shadow-card);
+  padding:.5rem 0; box-shadow:var(--shadow-card);
 }
 .navbar-inner { display:flex; align-items:center; justify-content:space-between; }
 
@@ -151,7 +151,15 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
   font-family:var(--font-serif); font-size:1.5rem; font-weight:600;
   color:var(--text); z-index:1001; position:relative;
 }
-.logo img { height:56px; width:auto; max-width:210px; object-fit:contain; border-radius:6px; }
+/* Large logo on page load (before scroll) */
+.logo img {
+  height:100px; width:auto; max-width:280px;
+  object-fit:contain; border-radius:6px;
+  transition:height .35s cubic-bezier(.4,0,.2,1),
+             max-width .35s cubic-bezier(.4,0,.2,1);
+}
+/* Shrinks smoothly when user scrolls */
+.navbar.scrolled .logo img { height:50px; max-width:180px; }
 [data-theme="dark"] .logo img { background:#fff; border-radius:4px; padding:3px; }
 .logo span { color:var(--gold); font-style:italic; }
 
