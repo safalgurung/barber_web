@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Elite Fade Barber Studio</title>
+  <meta name="description" content="Browse our gallery of premium haircuts, beard styles, and grooming work from Elite Fade Barber Studio in Kathmandu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script>(function(){var t=localStorage.getItem('ef-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo-gold.png" alt="Elite Fade" onerror="this.style.display='none'">
+        Elite <span>Fade</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <a href="contact.html" class="btn btn-gold">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="team.html" class="nav-link">Team</a>
+  <a href="gallery.html" class="nav-link">Gallery</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+  <a href="contact.html" class="btn btn-gold">Book Now</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Portfolio</span>
+    <h1 class="section-title">Our Work</h1>
+    <div class="section-divider" style="margin:0 auto 1.5rem"></div>
+    <p class="section-subtitle" style="margin:0 auto">Every cut tells a story. Browse our portfolio and find your next look.</p>
+  </div>
+</section>
+
+<section class="gallery-full">
+  <div class="container">
+    <div class="gallery-masonry fade-up">
+
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g1/600/750?grayscale" alt="Elite Fade — Cut 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g2/600/500?grayscale" alt="Elite Fade — Cut 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g3/600/650?grayscale" alt="Elite Fade — Cut 3">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g4/600/550?grayscale" alt="Elite Fade — Cut 4">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g5/600/700?grayscale" alt="Elite Fade — Cut 5">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g6/600/480?grayscale" alt="Elite Fade — Cut 6">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g7/600/620?grayscale" alt="Elite Fade — Cut 7">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g8/600/530?grayscale" alt="Elite Fade — Cut 8">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g9/600/680?grayscale" alt="Elite Fade — Cut 9">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g10/600/590?grayscale" alt="Elite Fade — Cut 10">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g11/600/640?grayscale" alt="Elite Fade — Cut 11">
+      </div>
+      <div class="gallery-item">
+        <img src="https://picsum.photos/seed/g12/600/510?grayscale" alt="Elite Fade — Cut 12">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── LIGHTBOX ─────────────────────────────────────────────────── -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+  <img class="lb-img" src="" alt="">
+  <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="lightbox-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <button class="lightbox-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-counter"></div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Elite <span>Fade</span></a>
+        <p>Premium grooming for the modern gentleman. Excellence in every cut since 2015.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Classic Haircut</a></li>
+          <li><a href="services.html">Beard Trim</a></li>
+          <li><a href="services.html">Hot Towel Shave</a></li>
+          <li><a href="services.html">Hair Color</a></li>
+          <li><a href="services.html">Head Massage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Find Us</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+          <li><i class="fas fa-phone"></i> +977 9812345678</li>
+          <li><i class="fab fa-whatsapp"></i> +977 9812345678</li>
+          <li><i class="fas fa-envelope"></i> hello@elitefade.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Elite Fade Barber Studio. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/9779812345678" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<script src="js/script.js"></script>
+</body>
+</html>
