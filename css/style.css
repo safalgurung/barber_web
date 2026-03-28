@@ -123,7 +123,8 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 
 /* ─── PAGE HERO (inner pages) ───────────────────────────────────── */
 .page-hero {
-  padding:9rem 0 5rem; text-align:center; position:relative;
+  /* 11rem top = large navbar (~8rem) + comfortable breathing room */
+  padding:11rem 0 5rem; text-align:center; position:relative;
   background:linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
   border-bottom:1px solid var(--border);
 }
@@ -227,20 +228,23 @@ body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
 .hero {
+  /* padding-top pushes flex-center below the tall fixed navbar (~8rem) */
   position:relative; min-height:100vh; display:flex; align-items:center;
-  overflow:hidden;
+  padding-top:8rem; overflow:hidden;
 }
 .hero-bg {
   position:absolute; inset:0;
   /* Light mode: bright, clean barbershop interior */
-  background-image:url('https://images.unsplash.com/photo-1521490683712-35a1cb235d1c?auto=format&fit=crop&w=1920&q=80');
+  /* background-image:url('https://images.unsplash.com/photo-1521490683712-35a1cb235d1c?auto=format&fit=crop&w=1920&q=80'); */
+  background-image: url('../assets/hero/hero2.png');
   background-size:cover; background-position:center;
   filter:brightness(.68); transition:background-image .4s ease, filter var(--ease);
 }
 [data-theme="dark"] .hero-bg {
   /* Dark mode: cinematic, moody barber shot */
-  background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80');
-  background-position:center top;
+  /* background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80'); */
+  background-image: url('../assets/hero/hero.png');
+  background-position:center ;
   filter:brightness(.28);
 }
 
@@ -601,6 +605,12 @@ body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
   .about-story-grid { grid-template-columns:1fr; gap:3rem; }
   .contact-grid { grid-template-columns:1fr; }
   .gallery-masonry { columns:2; }
+  /* Logo: slightly smaller on tablet, still prominent before scroll */
+  .logo img { height:80px; max-width:240px; }
+  .navbar.scrolled .logo img { height:46px; max-width:160px; }
+  /* Navbar ~104px tall at tablet → adjust hero/page-hero clearance */
+  .hero { padding-top:7rem; }
+  .page-hero { padding:9.5rem 0 4.5rem; }
 }
 
 @media (max-width:768px) {
@@ -614,6 +624,15 @@ body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
   .services-full-grid { grid-template-columns:1fr; }
   .team-full-grid { grid-template-columns:1fr; }
   .values-grid { grid-template-columns:1fr 1fr; }
+  /* Logo: compact for mobile, still visible before scroll */
+  .logo img { height:64px; max-width:200px; }
+  .navbar.scrolled .logo img { height:38px; max-width:130px; }
+  /* Navbar padding tighter on mobile */
+  .navbar { padding:.5rem 0; }
+  .navbar.scrolled { padding:.3rem 0; }
+  /* Navbar ~80px tall on mobile → scale down clearance */
+  .hero { padding-top:5.5rem; }
+  .page-hero { padding:8rem 0 4rem; }
 }
 
 @media (max-width:480px) {
@@ -621,4 +640,10 @@ body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
   .gallery-grid-home { grid-template-columns:1fr; grid-template-rows:none; }
   .gallery-grid-home img { height:180px; }
   .values-grid { grid-template-columns:1fr; }
+  /* Logo: smallest size for small phones */
+  .logo img { height:52px; max-width:160px; }
+  .navbar.scrolled .logo img { height:32px; max-width:110px; }
+  /* Navbar ~68px tall on small phones */
+  .hero { padding-top:4.5rem; }
+  .page-hero { padding:7rem 0 3.5rem; }
 }
