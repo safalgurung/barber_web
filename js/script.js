@@ -4,7 +4,7 @@
 
 /* ─── THEME (runs immediately, before DOM ready, to prevent flash) ─ */
 (function () {
-  var stored = localStorage.getItem("ef-theme") || "dark";
+  var stored = localStorage.getItem("ef-theme") || "light";
   document.documentElement.setAttribute("data-theme", stored);
 })();
 
@@ -202,3 +202,14 @@ document.addEventListener("DOMContentLoaded", function () {
   initTestimonials();
   initLightbox();
 });
+
+// --- AUTO-UPDATE FOOTER YEAR ---
+const updateYear = () => {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+};
+
+// Initialize when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', updateYear);

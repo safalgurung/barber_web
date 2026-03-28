@@ -1,26 +1,28 @@
 /* ============================================================
-   ELITE FADE BARBER STUDIO — style.css
-   Premium Luxury Dark / Light Theme
+   RAPTI FADE STUDIO — style.css
+   Brand Palette: Teal #1A6468 · Coral #D63820 · Navy #1E3D8C
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 /* ─── CSS VARIABLES ──────────────────────────────────────────────── */
 :root {
-  /* Dark Mode (default) */
-  --bg:          #0A0A0A;
-  --bg-card:     #1A1A1A;
-  --bg-hover:    #222222;
-  --text:        #F5F5F5;
-  --text-muted:  #AAAAAA;
-  --gold:        #D4AF37;
-  --gold-hover:  #B38F2E;
-  --gold-glow:   rgba(212,175,55,.14);
-  --border:      rgba(255,255,255,.08);
-  --border-gold: rgba(212,175,55,.35);
-  --nav-bg:      rgba(10,10,10,.93);
-  --shadow:      0 8px 40px rgba(0,0,0,.5);
-  --shadow-card: 0 4px 20px rgba(0,0,0,.4);
+  /* Light Mode — DEFAULT — Brand: Rapti Fade Studio */
+  --bg:          #F1F8F9;
+  --bg-card:     #FFFFFF;
+  --bg-hover:    #E0F0F2;
+  --text:        #0C3840;
+  --text-muted:  #4A7275;
+  --gold:        #1A6468;       /* brand teal */
+  --gold-hover:  #0F4A4D;
+  --gold-glow:   rgba(26,100,104,.12);
+  --border:      rgba(26,100,104,.13);
+  --border-gold: rgba(26,100,104,.32);
+  --nav-bg:      rgba(241,248,249,.96);
+  --shadow:      0 8px 40px rgba(12,56,64,.10);
+  --shadow-card: 0 4px 20px rgba(12,56,64,.08);
+  --accent-red:  #D63820;       /* coral swoosh */
+  --accent-navy: #1E3D8C;       /* navy swoosh */
   --font-sans:   'DM Sans', sans-serif;
   --font-serif:  'Playfair Display', serif;
   --radius:      8px;
@@ -28,20 +30,22 @@
   --ease:        .35s cubic-bezier(.4,0,.2,1);
 }
 
-[data-theme="light"] {
-  --bg:          #F8F6F0;
-  --bg-card:     #FFFFFF;
-  --bg-hover:    #F0EDE4;
-  --text:        #1F1F1F;
-  --text-muted:  #555555;
-  --gold:        #D4AF37;
-  --gold-hover:  #B38F2E;
-  --gold-glow:   rgba(212,175,55,.10);
-  --border:      rgba(0,0,0,.10);
-  --border-gold: rgba(212,175,55,.40);
-  --nav-bg:      rgba(248,246,240,.95);
-  --shadow:      0 8px 40px rgba(0,0,0,.10);
-  --shadow-card: 0 4px 20px rgba(0,0,0,.08);
+[data-theme="dark"] {
+  --bg:          #081C1E;
+  --bg-card:     #0F2628;
+  --bg-hover:    #163032;
+  --text:        #E5F3F5;
+  --text-muted:  #7AAEB2;
+  --gold:        #2AAAB5;       /* lighter teal for dark bg */
+  --gold-hover:  #1E8890;
+  --gold-glow:   rgba(42,170,181,.15);
+  --border:      rgba(255,255,255,.08);
+  --border-gold: rgba(42,170,181,.35);
+  --nav-bg:      rgba(8,28,30,.95);
+  --shadow:      0 8px 40px rgba(0,0,0,.5);
+  --shadow-card: 0 4px 20px rgba(0,0,0,.4);
+  --accent-red:  #E85A3A;
+  --accent-navy: #4A80D0;
 }
 
 /* ─── RESET & BASE ───────────────────────────────────────────────── */
@@ -87,11 +91,11 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
   white-space:nowrap;
 }
 .btn-gold {
-  background:var(--gold); color:#000; border:2px solid var(--gold);
+  background:var(--gold); color:#fff; border:2px solid var(--gold);
 }
 .btn-gold:hover {
   background:var(--gold-hover); border-color:var(--gold-hover);
-  transform:translateY(-2px); box-shadow:0 8px 24px rgba(212,175,55,.3);
+  transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,100,104,.35);
 }
 .btn-outline {
   background:transparent; color:var(--gold); border:2px solid var(--gold);
@@ -147,7 +151,8 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
   font-family:var(--font-serif); font-size:1.5rem; font-weight:600;
   color:var(--text); z-index:1001; position:relative;
 }
-.logo img { width:42px; height:42px; object-fit:contain; }
+.logo img { height:56px; width:auto; max-width:210px; object-fit:contain; border-radius:6px; }
+[data-theme="dark"] .logo img { background:#fff; border-radius:4px; padding:3px; }
 .logo span { color:var(--gold); font-style:italic; }
 
 .nav-links { display:flex; align-items:center; gap:2.5rem; }
@@ -164,6 +169,12 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 .nav-links a.active { color:var(--gold); }
 .nav-links a:hover::after,
 .nav-links a.active::after { width:100%; }
+
+/* ── White nav text ONLY on home page (dark hero behind navbar) ── */
+body.has-hero .navbar:not(.scrolled) .nav-links a { color:rgba(255,255,255,.8); }
+body.has-hero .navbar:not(.scrolled) .nav-links a:hover,
+body.has-hero .navbar:not(.scrolled) .nav-links a.active { color:#ffffff; }
+body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
 
 .nav-actions { display:flex; align-items:center; gap:.75rem; }
 
@@ -213,36 +224,49 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 }
 .hero-bg {
   position:absolute; inset:0;
-  background-image:url('https://picsum.photos/seed/barberhero/1920/1080?grayscale');
+  /* Light mode: bright, clean barbershop interior */
+  background-image:url('https://images.unsplash.com/photo-1521490683712-35a1cb235d1c?auto=format&fit=crop&w=1920&q=80');
   background-size:cover; background-position:center;
-  filter:brightness(.33); transition:filter var(--ease);
+  filter:brightness(.68); transition:background-image .4s ease, filter var(--ease);
 }
-[data-theme="light"] .hero-bg { filter:brightness(.45); }
+[data-theme="dark"] .hero-bg {
+  /* Dark mode: cinematic, moody barber shot */
+  background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80');
+  background-position:center top;
+  filter:brightness(.28);
+}
 
 .hero-overlay {
   position:absolute; inset:0;
-  background:linear-gradient(135deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.25) 100%);
+  /* Light mode: lighter overlay — image shows through, stays readable */
+  background:linear-gradient(135deg, rgba(8,30,40,.55) 0%, rgba(8,30,40,.18) 100%);
+}
+[data-theme="dark"] .hero-overlay {
+  background:linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.30) 100%);
 }
 .hero-content { position:relative; z-index:2; max-width:820px; }
 
 .hero-label {
   font-size:.7rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:1.5rem;
+  color:rgba(255,255,255,.85); margin-bottom:1.5rem;
   display:flex; align-items:center; gap:1rem;
 }
 .hero-label::before {
-  content:''; display:block; width:40px; height:1px; background:var(--gold);
+  content:''; display:block; width:40px; height:1px; background:rgba(255,255,255,.55);
 }
 .hero-title {
   font-size:clamp(3rem,7vw,6rem); font-weight:700;
   color:#ffffff; line-height:1.05; margin-bottom:1.5rem;
 }
-.hero-title em { color:var(--gold); font-style:italic; }
+/* Hero always sits on a dark background, so em must always be the bright teal */
+.hero-title em { color:#2AAAB5; font-style:italic; }
 .hero-subtitle {
   font-size:1.1rem; color:rgba(255,255,255,.7);
   margin-bottom:2.5rem; max-width:480px;
 }
 .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+.hero-cta .btn-outline { color:#fff; border-color:rgba(255,255,255,.55); }
+.hero-cta .btn-outline:hover { background:rgba(255,255,255,.12); border-color:#fff; }
 
 /* ─── SERVICES PREVIEW (home) ───────────────────────────────────── */
 .services-preview { padding:7rem 0; }
@@ -437,7 +461,7 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 }
 .lightbox-prev { left:1.5rem; }
 .lightbox-next { right:1.5rem; }
-.lightbox-prev:hover,.lightbox-next:hover { background:rgba(212,175,55,.3); border-color:var(--gold); }
+.lightbox-prev:hover,.lightbox-next:hover { background:rgba(26,100,104,.35); border-color:var(--gold); }
 .lightbox-counter {
   position:fixed; bottom:2rem; left:50%; transform:translateX(-50%);
   font-size:.85rem; color:rgba(255,255,255,.6); letter-spacing:.1em;
@@ -509,8 +533,8 @@ h1,h2,h3,h4,h5 { font-family:var(--font-serif); line-height:1.2; }
 .hours-open { color:#4caf50 !important; font-weight:600 !important; }
 
 .map-wrap { border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); }
-.map-wrap iframe { width:100%; height:420px; display:block; filter:grayscale(20%); transition:filter var(--ease); }
-[data-theme="light"] .map-wrap iframe { filter:none; }
+.map-wrap iframe { width:100%; height:420px; display:block; filter:none; transition:filter var(--ease); }
+[data-theme="dark"] .map-wrap iframe { filter:grayscale(30%); }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────── */
 .footer { background:var(--bg-card); border-top:1px solid var(--border); padding:5rem 0 2.5rem; }
