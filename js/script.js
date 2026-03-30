@@ -67,15 +67,15 @@ function initNavbar() {
   }
 
   /* Active nav link — detect current page by pathname */
-  var path = window.location.pathname;
-  var file = path.split("/").pop() || "index.html";
-  if (file === "") file = "index.html";
+  // var path = window.location.pathname;
+  // var file = path.split("/").pop() || "index.html";
+  // if (file === "") file = "index.html";
 
-  document.querySelectorAll(".nav-link").forEach(function (link) {
-    var href = (link.getAttribute("href") || "").split("/").pop();
-    if (href === "" || href === null) href = "index.html";
-    if (href === file) link.classList.add("active");
-  });
+  // document.querySelectorAll(".nav-link").forEach(function (link) {
+  //   var href = (link.getAttribute("href") || "").split("/").pop();
+  //   if (href === "" || href === null) href = "index.html";
+  //   if (href === file) link.classList.add("active");
+  // });
 }
 
 /* ─── SCROLL ANIMATIONS ───────────────────────────────────────────── */
