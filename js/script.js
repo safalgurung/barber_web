@@ -213,3 +213,16 @@ const updateYear = () => {
 
 // Initialize when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', updateYear);
+
+
+const modal = document.getElementById('qr-modal');
+  const openBtn = document.getElementById('open-qr');
+  const closeBtn = document.getElementById('close-qr');
+
+  openBtn.onclick = () => modal.classList.add('active');
+  closeBtn.onclick = () => modal.classList.remove('active');
+  
+  // Close if user clicks outside the white box
+  window.onclick = (event) => {
+    if (event.target == modal) modal.classList.remove('active');
+  }
