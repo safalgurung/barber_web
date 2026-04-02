@@ -255,7 +255,7 @@ body.has-hero .navbar:not(.scrolled) .nav-links a::after { background:#ffffff; }
 [data-theme="dark"] .hero-bg {
   /* Dark mode: cinematic, moody barber shot */
   /* background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80'); */
-  background-image: url('../assets/hero/hero.png');
+  background-image: url('../assets/hero/hero1.png');
   background-position:center ;
   filter:brightness(.28);
 }
